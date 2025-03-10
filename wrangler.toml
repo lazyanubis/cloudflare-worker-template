@@ -18,8 +18,8 @@ compatibility_date = "2025-03-03" # A date in the form yyyy-mm-dd, which will be
 
 # Triggers allow you to define the cron expression to invoke your Worker's scheduled function.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#triggers
-# [triggers]
-# crons = ["* * * * *"] # * * * * * = run every minute
+[triggers]
+crons = ["* * * * *"] # * * * * * = run every minute
 
 # The Observability setting allows you to automatically ingest, store, filter, and analyze logging data emitted from Cloudflare Workers directly from your Cloudflare Worker's dashboard.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#observability
