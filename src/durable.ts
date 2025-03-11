@@ -11,6 +11,7 @@ export class MyDurableObject extends DurableObject<Env> {
      */
     constructor(ctx: DurableObjectState, env: Env) {
         super(ctx, env);
+        console.log('Durable Object created');
     }
 
     /**

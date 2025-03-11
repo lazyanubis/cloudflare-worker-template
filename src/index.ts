@@ -27,16 +27,16 @@ export default {
         if (Math.random() < 0.5) {
             // We will create a `DurableObjectId` using the pathname from the Worker request
             // This id refers to a unique instance of our 'MyDurableObject' class above
-            let id: DurableObjectId = env.MY_DURABLE_OBJECT.idFromName(new URL(request.url).pathname);
+            const id: DurableObjectId = env.MY_DURABLE_OBJECT.idFromName(new URL(request.url).pathname);
 
             // This stub creates a communication channel with the Durable Object instance
             // The Durable Object constructor will be invoked upon the first call for a given id
-            let stub = env.MY_DURABLE_OBJECT.get(id);
+            const stub = env.MY_DURABLE_OBJECT.get(id);
             console.debug(`🚀 ~ fetch ~ stub:`, stub, typeof stub.sayHello);
 
             // We call the `sayHello()` RPC method on the stub to invoke the method on the remote
             // Durable Object instance
-            let greeting = await stub.sayHello('world');
+            const greeting = await stub.sayHello('world');
 
             return new Response(greeting);
         }
@@ -54,8 +54,8 @@ export default {
         // publish to a Queue, query a D1 Database, and much more.
         //
         // We'll keep it simple and make an API call to a Cloudflare API:
-        let resp = await fetch('https://api.cloudflare.com/client/v4/ips');
-        let wasSuccessful = resp.ok ? 'success' : 'fail';
+        const resp = await fetch('https://api.cloudflare.com/client/v4/ips');
+        const wasSuccessful = resp.ok ? 'success' : 'fail';
 
         // You could store this result in KV, write to a D1 Database, or publish to a Queue.
         // In this template, we'll just log the result:
