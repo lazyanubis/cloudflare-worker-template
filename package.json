@@ -10,6 +10,8 @@
         "deploy": "pnpm run lint && pnpm run test && wrangler deploy",
         "cf-typegen": "wrangler types"
     },
+    "dependencies": {
+    },
     "devDependencies": {
         "@cloudflare/vitest-pool-workers": "^0.7.7",
         "@cloudflare/workers-types": "^4.20250310.0",
