@@ -25,6 +25,7 @@ crons = ["* * * * *"] # * * * * * = run every minute
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#observability
 [observability]
 enabled = true
+# head_sampling_rate = 0.1
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
@@ -53,6 +54,7 @@ enabled = true
 [[durable_objects.bindings]]
 name = "MY_DURABLE_OBJECT"
 class_name = "MyDurableObject"
+# migrations_dir = "db/migrations"
 
 # Durable Object migrations.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#migrations
